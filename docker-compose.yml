@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  ifeira-api:
+    container_name: ifeira-api
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-production
+    restart: always
+    environment:
+      - PORT=3000
+    ports:
+      - 3333:3000
+    networks:
+      - meufeirante
+
+networks:
+  meufeirante:
+    external: true
