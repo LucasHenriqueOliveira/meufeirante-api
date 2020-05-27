@@ -1,39 +1,35 @@
-class Produto{
+class Produto {
+  #nome;
 
-    #nome;
-
-    constructor(nome){
-
-        if(typeof nome !== 'string'){
-            throw new TypeError('Nome informado não é uma string');
-        }
-
-        const nomeTrim = nome.trim();
-
-        if(nomeTrim.length <= 3){
-            throw new TypeError('Nome do produto deve ser ter mais de três letras');
-        }
-
-        this.#nome = nomeTrim;
-
+  constructor(nome) {
+    if (typeof nome !== "string") {
+      throw new TypeError("Produto não informado");
     }
 
-    get nome(){
-        return this.#nome;
+    const nomeTrim = nome.trim();
+
+    if (nomeTrim.length <= 3) {
+      throw new TypeError("Nome do produto deve ser ter mais de três letras");
     }
 
-    valueOf(){
-        return this.#nome;
-    }
+    this.#nome = nomeTrim;
+  }
 
-    toString(){
-        return this.#nome;
-    }
+  get nome() {
+    return this.#nome;
+  }
 
-    toJSON(){
-        return this.#nome;
-    }
+  valueOf() {
+    return this.#nome;
+  }
 
+  toString() {
+    return this.#nome;
+  }
+
+  toJSON() {
+    return this.#nome;
+  }
 }
 
 module.exports = Produto;
